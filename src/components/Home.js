@@ -1,11 +1,17 @@
-import React from 'react';
-import avatar from '../image/avatar.jpg';
-import {} from 'react-bootstrap';
-import '../css/index.css';
-export default class Home extends React.Component{
-    render(){
-        return (
-            <div>
+import React from 'react'
+import Header from './Header'
+import Title from './Title'
+import Footer from './Footer'
+const Home = () => (
+    <div>
+    <Header/>
+    <div className="container-fluid">
+        <div class="row content">
+            <div className="col-sm-3 sidenav">
+                <Title/>
+            </div>
+            <div className="col-sm-9">
+            <div className= "homepage">
                 <h4><small>RECENT POSTS</small></h4>
                 <hr/>
                 <h2>GIỚI THIỆU</h2>
@@ -59,6 +65,7 @@ export default class Home extends React.Component{
                     <li className="list-group-item">Là bạn nhưng sau tất cả, chỉ một chút hiểu lầm, bạn lại bỏ tôi 
                     đi mất. Tôi chắc rằng bạn không phải là người đầu tiên đối xử với tôi như thế. Gì chứ, sao không đến đánh tôi,
                     chửi tôi, và nói rằng tôi đã sai, và bạn đã giận tôi rất nhiều.</li>
+                    <li className="list-group-item">Xin hãy nghỉ về những mặt tốt của tôi mà tha lỗi cho lỗi lầm tôi gây ra với bạn</li>
                 </ul>
 
                 <h4><small>RECENT POSTS</small></h4>
@@ -88,7 +95,12 @@ export default class Home extends React.Component{
                 Và thương em nguyên vẹn như vậy......
                 </p>
             </div>
-            
-        );
-    }
-}
+            </div>
+        </div>
+        </div>
+        <hr/>
+        <Footer/>
+    </div>          
+)
+
+export default Home
