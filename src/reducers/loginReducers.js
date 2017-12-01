@@ -7,9 +7,9 @@ const initialState = {
 const loginReducer  = (state = initialState, action) => {
     switch(action.type){
         case LOGIN_SUCCESS:
-            return [...state, action.id]
+            return [...state, {id:action.id, token: action.token}]
         default:
-                return state
+            return state
     }
 
 }

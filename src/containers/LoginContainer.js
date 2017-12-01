@@ -3,7 +3,7 @@ import Login from '../components/Login'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import '../css/signup.css'
-import {getID} from '../actions/login'
+import {loginSuccess} from '../actions/login'
 import axios from 'axios'
 import {connect} from 'react-redux'
 class SignUpContainer extends React.Component{
@@ -38,8 +38,7 @@ class SignUpContainer extends React.Component{
                 this.setState({message: 'Login unsuccess!!!'});
                 return;
             }
-
-            this.props.dispatch(getID(res.data.id));
+            this.props.dispatch(loginSuccess(res.data.id, res.data.token));
             this.props.history.push('/')
         })
         .catch((err) => {
