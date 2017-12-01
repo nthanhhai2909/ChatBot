@@ -14,7 +14,6 @@ const SignUp = ({message, signupGoole, signupSimple, changeTextUsername,changeTe
                     <Paper  zDepth={3} >
                         <div  className="sign-form">
                             <h4 style={{textAlign:'center', color:'red'}}>{message}</h4>
-                            <RaisedButton label="Login with google" secondary={true} onClick={() =>signupGoole()}/>
                             <h4>Email</h4>
                             <TextField fullWidth={true} 
                                 onChange={ e => changeTextEmail(e.target.value)}

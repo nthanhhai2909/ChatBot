@@ -2,7 +2,6 @@ import React from 'react'
 import Signup from '../components/Signup'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import {changeTextEmail} from '../actions/signup'
 import PropTypes from 'prop-types'
 import '../css/signup.css'
 import {connect} from 'react-redux'
@@ -63,8 +62,9 @@ class SignUpContainer extends React.Component{
             confirm:this.state.confirm,
         })
         .then((response)=>{
-            console.log(response.data);
+            console.log(response);
             if(response.data.status === 'true'){
+                alert("Sign-Up success!");
                 this.props.history.push("/");
             }
             else{
@@ -145,7 +145,7 @@ class SignUpContainer extends React.Component{
     }
 
     render(){
-        console.log("hihi", this.state.invalidEmail);
+
         return(
             <div className="signup">
                 <Header/>
