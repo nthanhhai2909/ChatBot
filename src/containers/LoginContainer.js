@@ -39,11 +39,23 @@ class SignUpContainer extends React.Component{
                 return;
             }
             this.props.dispatch(loginSuccess(res.data.id, res.data.token));
-            this.props.history.push('/')
+            this.props.history.push('/');
         })
         .catch((err) => {
 
         })
+    }
+    responseGoogleUnSuccess(res){
+        this.setState({message: 'Login unsuccess!!!'});
+        return;
+        
+
+    }
+    responseGoogleSuccess(res){
+        console.log(res);
+        this.props.dispatch(loginSuccess(res.googleId, res.Zi.access_token));
+        this.props.history.push('/');
+
     }
     render(){
         return(
@@ -55,7 +67,9 @@ class SignUpContainer extends React.Component{
                     LoginSimple={()=>this.LoginSimple()}
                     changeTextUsername={(value) => this.changeTextUsername(value)}  
                     changTextPassWord={(value) => this.changTextPassWord(value)}   
-                    signUpTranfer={() => this.signUpTranfer()}  
+                    signUpTranfer={() => this.signUpTranfer()} 
+                    responseGoogleUnSuccess={(res) => this.responseGoogleUnSuccess(res)  } 
+                    responseGoogleSuccess={(res) => this.responseGoogleSuccess(res)  } 
                 />
                 <hr/>
                 <Footer/>
